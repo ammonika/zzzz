@@ -1,0 +1,38 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg1
+Step 6: Initialize an empty repository
+Step 7: Add your target file
+Step 8: Make changes in your file and save the commit
+Step 9: Always remember before the git commit -m "your commit" command, only git add "yourfile.txt" should be present or else it throws an error.
+Step 10:We completed the first experiment
+
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>git config --system user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --system user.email "ammonika2004@gmail.com"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.email "ammonika2004@gmail.com"
+
+D:\Monu\3rd Sem\Git\gl>git config --global --list
+safe.directory=D:/Monu/Git
+user.name=Monika
+user.email=ammonika2004@gmail.com
+
+D:\Monu\3rd Sem\Git\gl>cd prg1
+
+D:\Monu\3rd Sem\Git\gl\prg1>git init
+Initialized empty Git repository in D:/Monu/3rd Sem/Git/gl/prg1/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg1>git add myfile.txt
+
+D:\Monu\3rd Sem\Git\gl\prg1>git commit -m "add a new file called myfile.txt"
+[master (root-commit) 6737725] add a new file called myfile.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 myfile.txt

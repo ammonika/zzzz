@@ -1,0 +1,30 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg4
+Ste 6: Initialize the empty git repo using $git init
+Step 7: Sign in to www.github.com and then create a new repository and make it public and include the readme.md file
+Step 8: Create a file of your own on the repository this is optional.
+Step 9: Copy the link to the remote repository and use the cmd $git clone <https address>
+Step 10: If it is showng as error setting the certificate give cmd $git config --global http.sslverify "false" this should solve it.
+Step 11: We did it!
+
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg4
+
+D:\Monu\3rd Sem\Git\gl\prg4>git clone https://github.com/ammonika/remoterepo099.git
+Cloning into 'remoterepo099'...
+fatal: unable to access 'https://github.com/ammonika/remoterepo099.git/': error setting certificate file: D:/Monu/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+
+D:\Monu\3rd Sem\Git\gl\prg4>git config --global http.sslverify "false"
+
+D:\Monu\3rd Sem\Git\gl\prg4>git clone https://github.com/ammonika/remoterepo099.git
+Cloning into 'remoterepo099'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (9/9), done.

@@ -1,0 +1,93 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg3
+Ste 6: Initialize the empty git repo using $git init
+Step 7: Open the target file and make some changes and save it just type the filename to open ex: st.txt
+Step 8: Then add the file into the cmd $git add <filename.txt>
+Step 9: Then commit the changes using $git commit -m "message"
+Step 10: It is mandatory to have atleast one commit before stashing as the first commit creates a master branch
+Step 11: Open the same file again and do some changes but DO NOT create a commit for it.
+Step 12: Stash the changes using $git stash
+Step 13: Create a new branch $git checkout -b targetbranch and then switch back to the master branch
+Step 14: Go to target branch $git checkout targetbranch and this is where we stash our changes using $git stash apply
+Step 15: Add the respective file $git add <file.txt> and then $git commit -m "apply the changes" and it will be applied and to check use $git log
+Step 16: We did it!
+
+
+D:\Monu\3rd Sem\Git>cd gl
+D:\Monu\3rd Sem\Git\gl>git config --system user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --system user.email "ammonika2004@gmail.com"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.email "ammonika2004@gmail.com"
+D:\Monu\3rd Sem\Git>git config --global --list
+safe.directory=D:/Monu/Git
+user.name=Monika
+user.email=ammonika2004@gmail.com
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg3
+
+D:\Monu\3rd Sem\Git\gl\prg3>git init
+Initialized empty Git repository in D:/Monu/3rd Sem/Git/gl/prg3/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg3>st.txt
+
+D:\Monu\3rd Sem\Git\gl\prg3>git add st.txt
+
+D:\Monu\3rd Sem\Git\gl\prg3>git commit -m "t"
+[master (root-commit) bb1c63d] t
+ 1 file changed, 2 insertions(+)
+ create mode 100644 st.txt
+
+D:\Monu\3rd Sem\Git\gl\prg3>st.txt
+
+D:\Monu\3rd Sem\Git\gl\prg3>git stash
+Saved working directory and index state WIP on master: bb1c63d t
+
+D:\Monu\3rd Sem\Git\gl\prg3>git checkout -b targetbranch
+Switched to a new branch 'targetbranch'
+
+D:\Monu\3rd Sem\Git\gl\prg3>git checkout master
+Switched to branch 'master'
+
+D:\Monu\3rd Sem\Git\gl\prg3>git stash apply
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   st.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Monu\3rd Sem\Git\gl\prg3>git commit -m "apply the changes"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   st.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Monu\3rd Sem\Git\gl\prg3>git add st.txt
+
+D:\Monu\3rd Sem\Git\gl\prg3>git commit -m "apply the changes"
+[master 0072390] apply the changes
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\Monu\3rd Sem\Git\gl\prg3>git log
+commit 00723906fd70148341c27179e8b42c650cc46d6f (HEAD -> master)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Tue Mar 12 13:45:07 2024 +0530
+
+    apply the changes
+
+commit bb1c63d1f58219c0d1763e4976bbcd250cdae519 (targetbranch)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Tue Mar 12 13:43:18 2024 +0530
+
+    t

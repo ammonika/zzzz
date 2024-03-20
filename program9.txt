@@ -1,0 +1,95 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg9
+Step 6: Initialize the empty git repo using $git init
+Step 7: In your folder create a file and then add it to the cmd box without doing any changes and do a commit, this will establish the main branch.
+Step 8: Now, proceed to do three changes to the txt document and do three commits so finally we have four commits including the first one.
+Step 9: the goal is to see information about who did the commit, when and why if given a commit id, for that we need to pass the cmd $git log and obtain commit ids
+Step 10: Copy the desired commit id and then use $git show <commit id> this will show the details of that respective commit only.
+Step 11: To see a number of commit details but not all, say out of 100 commits you need to see 1, then we use $git log -n 1 <commit id>, the -1 specifies that we want to see only one commit. This is an alternative command to $git show
+Step 12: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg9
+
+D:\Monu\3rd Sem\Git\gl\prg9>git init
+Initialized empty Git repository in D:/Monu/3rd Sem/Git/gl/prg9/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg9>git add show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git commit -m "added show file to git"
+[master (root-commit) 301fc14] added show file to git
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git add show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git commit -m "first commit"
+[master 1e4e996] first commit
+ 1 file changed, 1 insertion(+)
+
+D:\Monu\3rd Sem\Git\gl\prg9>show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git add show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git commit -m "second commit"
+[master 78c8564] second commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\Monu\3rd Sem\Git\gl\prg9>show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git add show.txt
+
+D:\Monu\3rd Sem\Git\gl\prg9>git commit -m "third commit"
+[master 6fb35c8] third commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\Monu\3rd Sem\Git\gl\prg9>git log
+commit 6fb35c87c3759e29b643626ae5110364fc742480 (HEAD -> master)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:33:22 2024 +0530
+
+    third commit
+
+commit 78c8564bd182fabdbb6cd686f6ea006ffcca80c3
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:32:56 2024 +0530
+
+    second commit
+
+commit 1e4e9966c4ff69fb1e81b718d2e960104ba75d0b
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:32:18 2024 +0530
+
+    first commit
+
+commit 301fc142b344c69d72b716035daf0b86fe006af1
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:31:50 2024 +0530
+
+    added show file to git
+
+D:\Monu\3rd Sem\Git\gl\prg9>git show 301fc142b344c69d72b716035daf0b86fe006af1
+commit 301fc142b344c69d72b716035daf0b86fe006af1
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:31:50 2024 +0530
+
+    added show file to git
+
+diff --git a/show.txt b/show.txt
+new file mode 100644
+index 0000000..e69de29
+
+D:\Monu\3rd Sem\Git\gl\prg9>git log -n 1 301fc142b344c69d72b716035daf0b86fe006af1
+commit 301fc142b344c69d72b716035daf0b86fe006af1
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:31:50 2024 +0530
+
+    added show file to git
+
+D:\Monu\3rd Sem\Git\gl\prg9>

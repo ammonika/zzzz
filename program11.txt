@@ -1,0 +1,92 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg10
+Step 6: Initialize the empty git repo using $git init
+Step 7: Create a txt file in your folder then add it to the cmd box and do a commit.
+Step 8: Proceed to do 4-5 other changes and then do 4-5 other commits so now we have a total of 5-6 commits.
+Step 9: Now we need to see the git log but not of all the commits this is achieved by $git log -n 5, this command shows the git log of the last five commits.
+Step 10: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg11
+
+D:\Monu\3rd Sem\Git\gl\prg11>git init
+Initialized empty Git repository in D:/Monu/3rd Sem/Git/gl/prg11/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 1"
+[master (root-commit) 5500a02] added 1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 2"
+[master 0ab683e] added 2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 3"
+[master 5cfaaf2] added 3
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 4.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 4"
+[master d2b021b] added 4
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 4.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 5.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 5"
+[master a4df2f0] added 5
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 5.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git add 6.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git commit -m "added 6"
+[master d615108] added 6
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 6.txt
+
+D:\Monu\3rd Sem\Git\gl\prg11>git log -n 5
+commit d615108cadb8ab00c68b8f2daa3eb394b8d0d1c4 (HEAD -> master)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:42:24 2024 +0530
+
+    added 6
+
+commit a4df2f04cde2cd3c58a78d15ec4c26c67a0e0d91
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:42:13 2024 +0530
+
+    added 5
+
+commit d2b021b586b688238521b0a976902151a1dde333
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:42:01 2024 +0530
+
+    added 4
+
+commit 5cfaaf211bee70ccf0f737e05a208a12ef26d1d6
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:41:42 2024 +0530
+
+    added 3
+
+commit 0ab683e1464b0c4018cf7e6df9de1a3e06518178
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:41:27 2024 +0530
+
+    added 2
+
+D:\Monu\3rd Sem\Git\gl\prg11>

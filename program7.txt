@@ -1,0 +1,56 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg7
+Step 6: Initialize the empty git repo using $git init
+Step 7: Create a remote repository and clone it into the desired folder.
+Step 8: Then navigate to that remote repo's folder and then add that file and do a commit and save it.
+Step 9: You can create multiple commits too, and choose which commit you want to add a tag to.
+Step 10: give the cmd $git tag and this is to ensure that you don't have any other tags and if there are tags it will show up here.
+Step 11: You can create a tag after a certain commit by using the cmd $git tag <tagname>
+Step 12: Then again you can check the creation of the tag by using $git tag command.
+Step 13: If you want to create a tag to a specific commit then we can do it by using $git tag <tagname> <commit id>
+Step 14: Commit id of the commit can be obtained by the command $git log
+Step 15: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg7
+
+D:\Monu\3rd Sem\Git\gl\prg7>git init
+Initialized empty Git repository in D:/Monu/3rd Sem/Git/gl/prg7/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg7>git clone https://github.com/ammonika/tag.git
+Cloning into 'tag'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+D:\Monu\3rd Sem\Git\gl\prg7>cd tag
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>tag.txt
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git add tag.txt
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git commit -m "added tag.txt"
+[main 398336e] added tag.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 tag.txt
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>tag.txt
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git add tag.txt
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git commit -m "first commit"
+[main 71c5148] first commit
+ 1 file changed, 1 insertion(+)
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git tag
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git tag v1.0
+
+D:\Monu\3rd Sem\Git\gl\prg7\tag>git tag
+v1.0

@@ -1,0 +1,171 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg5
+Ste 6: Initialize the empty git repo using $git init
+Step 7: Create a repository on github and then clone your repository into the folder 
+Step 8: For ex, if the name of the repository is rebase, on your cmd after cloning you need to navigate to rebase using cd rebase/
+Step 9: Then, check the branch $git branch, then create a new branch, $git branch feature1 then switch to that branch $git checkout feature1 then again check the current branch by $git branch.
+Step 10: Check $git status after this first go to the folder and create three text files, come back to cmd box add each one of them and do commits, you shld have three file commits and one original clone commit when given $git log
+Step 11: Switch back to master branch and go to the folder create another file and add it into the cmd and create a commit and give $git log.We will see only two commits one of the file and the other of the clone.
+Step 12: Now the most important cmd is to give rebase, $git rebase <secondary branch name> <primary branch>, ex: git rebase feature1 main it will then show successfully rebased and updated.
+Step 13: $git log, you will proceed to see all the commits made on the feature1 and main branch.
+Step 14: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>git config --global --list
+safe.directory=D:/Monu/Git
+user.name=Monika
+user.email=ammonika2004@gmail.com
+http.sslcainfo=D:/Monu/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+http.sslverify=false
+
+D:\Monu\3rd Sem\Git\gl>cd prg5
+
+D:\Monu\3rd Sem\Git\gl\prg5>git clone https://github.com/ammonika/rebase.git
+Cloning into 'rebase'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+D:\Monu\3rd Sem\Git\gl\prg5>cd rebase/
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git branch
+* main
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git branch feature1
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git checkout feature1
+Switched to branch 'feature1'
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git branch
+* feature1
+  main
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git status
+On branch feature1
+nothing to commit, working tree clean
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>touch f1
+'touch' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add .
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add f1
+fatal: pathspec 'f1' did not match any files
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add f1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git commit -m "f1 added"
+[feature1 2cc463a] f1 added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add f2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git commit -m "f2 added"
+[feature1 66eb409] f2 added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add f3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git commit -m "f3 added"
+[feature1 2346571] f3 added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git log
+commit 23465715bd7c7d6884b3d0b6325ee3488b657e68 (HEAD -> feature1)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:17:55 2024 +0530
+
+    f3 added
+
+commit 66eb4098d7ee715790e34381b5d0ef622bb47d94
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:17:09 2024 +0530
+
+    f2 added
+
+commit 2cc463afffa9e5e43d76a2ecc2eef6e8a14f3297
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:16:26 2024 +0530
+
+    f1 added
+
+commit caec129e4a2c946531fd4fe1ceaf3a827238deb0 (origin/main, origin/HEAD, main)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 20:06:54 2024 +0530
+
+    Initial commit
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git branch
+  feature1
+* main
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git add f10.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git commit -m "f10 added"
+[main 3b500ba] f10 added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f10.txt
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git log
+commit 3b500babb7ce57a72ca6ac88288be2cd11183330 (HEAD -> main)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:21:04 2024 +0530
+
+    f10 added
+
+commit caec129e4a2c946531fd4fe1ceaf3a827238deb0 (origin/main, origin/HEAD)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 20:06:54 2024 +0530
+
+    Initial commit
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git rebase feature1 main
+Successfully rebased and updated refs/heads/main.
+
+D:\Monu\3rd Sem\Git\gl\prg5\rebase>git log
+commit 4882a30871547e7801c9d0495de3deadfef4dada (HEAD -> main)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:21:04 2024 +0530
+
+    f10 added
+
+commit 23465715bd7c7d6884b3d0b6325ee3488b657e68 (feature1)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:17:55 2024 +0530
+
+    f3 added
+
+commit 66eb4098d7ee715790e34381b5d0ef622bb47d94
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:17:09 2024 +0530
+
+    f2 added
+
+commit 2cc463afffa9e5e43d76a2ecc2eef6e8a14f3297
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 20:16:26 2024 +0530
+
+    f1 added
+
+commit caec129e4a2c946531fd4fe1ceaf3a827238deb0 (origin/main, origin/HEAD)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 20:06:54 2024 +0530
+
+    Initial commit
+:

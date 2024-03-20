@@ -1,0 +1,72 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg2
+Step 6: Initialize the git repo by giving $ git init and then add the new text file using $git add newfile.txt
+Step 7: Fist you need to do your first commit only then the master branch is established
+Step 8: Then switch to the featurebranch by uisng $git checkout -b featurebranch
+Step 9: Do a commit in the featurebranch means open the file do some changes save it and then commit it to the cmd 
+Step 10: Then switch to the master branch $git checkout master
+Step 11: You always have to remember that you need to be on the opposite branch to merge the branches. If you want to merge the master to feature stay on the feature and vice versa.
+Step 12: Since we are on the master branch right now the cmd will be $git merge featurebranch 
+Step 13: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+D:\Monu\3rd Sem\Git\gl>git config --system user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --system user.email "ammonika2004@gmail.com"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.name "Monika"
+
+D:\Monu\3rd Sem\Git\gl>git config --global user.email "ammonika2004@gmail.com"
+
+D:\Monu\3rd Sem\Git\gl>cd prg2
+
+D:\Monu\3rd Sem\Git\gl\prg2>git init
+Reinitialized existing Git repository in D:/Monu/3rd Sem/Git/gl/prg2/.git/
+
+D:\Monu\3rd Sem\Git\gl\prg2>git add newfile.txt
+
+D:\Monu\3rd Sem\Git\gl\prg2>git commit -m "new file added in prg2 directory"
+On branch featurebranch
+nothing to commit, working tree clean
+
+D:\Monu\3rd Sem\Git\gl\prg2>git checkout master
+Switched to branch 'master'
+
+D:\Monu\3rd Sem\Git\gl\prg2>git commit -m "switched to master branch"
+On branch master
+nothing to commit, working tree clean
+
+D:\Monu\3rd Sem\Git\gl\prg2>git merge master
+Already up to date.
+
+D:\Monu\3rd Sem\Git\gl\prg2>git checkout master
+Already on 'master'
+
+D:\Monu\3rd Sem\Git\gl\prg2>git add master.txt
+
+D:\Monu\3rd Sem\Git\gl\prg2>git commit -m "added file master onto master branch"
+[master f73a973] added file master onto master branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 master.txt
+
+D:\Monu\3rd Sem\Git\gl\prg2>git merge master
+Already up to date.
+
+D:\Monu\3rd Sem\Git\gl\prg2>git checkout featurebranch
+Switched to branch 'featurebranch'
+
+D:\Monu\3rd Sem\Git\gl\prg2>git merge master
+Updating 4c008ee..f73a973
+Fast-forward
+ master.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 master.txt
+
+D:\Monu\3rd Sem\Git\gl\prg2>git merge featurebranch
+Updating 7215529..a1484ac
+Fast-forward
+ merge.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)

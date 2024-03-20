@@ -1,0 +1,146 @@
+Step 1: Open the git cmd 
+Step 2: First navigate to the first git file only not the inner files. ex:cd gitlab
+Step 3: Then do system configuration in the cmd box giving the user name and email
+Step 4: Do global configuration giving the same then check git config --global --list to make sure your name comes up.
+Step 5: Navigate to the folder you want to do the exp in ex: cd prg8
+Step 6: Initialize the empty git repo using $git init
+Step 7: Create a remote repository and clone it. Navigate to the folder in the remote repo
+Step 8: Then create a new branch and switch into it by using $git branch <branchname> and $git checkout <branchname>
+Step 9: When you are in the new branch ex: cherrybranch, create 4 txt documents and add them to the cmd box and commit each of them.
+Step 10: Check the advancements using the $git log after completion
+Step 11: Now switch back to the main branch and give $git log then you willonly see one commit which was created when you cloned the remote repository. 
+Step 12: Now we need to move the commits from the cherrybranch onto the main branch, you can move both individual commits or a series of commits from the cherrybranch to the main branch.
+Step 13: To perform cherry pick first we need to get the commit id using $git log
+Step 14: To move a single commit use $git cherry-pick <commit id>, to move multiple commits use $git cherry-pick <start commit>^...<end commit>
+Step 15: To make sure you have created the changes use $git log
+Step 16: We did it!
+
+D:\Monu\3rd Sem\Git>cd gl
+
+D:\Monu\3rd Sem\Git\gl>cd prg8
+
+D:\Monu\3rd Sem\Git\gl\prg8>git clone https://github.com/ammonika/cherrypick.git
+Cloning into 'cherrypick'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+D:\Monu\3rd Sem\Git\gl\prg8>cd cherrypick
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>ls -ldr
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git branch
+* main
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git branch cherrybranch
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git branch -a
+  cherrybranch
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git checkout cherrybranch
+Switched to branch 'cherrybranch'
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git branch
+* cherrybranch
+  main
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git add 1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git commit -m "1 added in cherrybranch"
+[cherrybranch 4925af1] 1 added in cherrybranch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git add 2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git commit -m "2 added in cherrybranch"
+[cherrybranch c3c7d64] 2 added in cherrybranch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 2.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git add 3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git commit -m "3 added in cherrybranch"
+[cherrybranch 5708ad8] 3 added in cherrybranch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git add 4.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git commit -m "4 added in cherrybranch"
+[cherrybranch 8bbe9c2] 4 added in cherrybranch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 4.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git log
+commit 8bbe9c207eecf76420ef276a6d1095f581325d5c (HEAD -> cherrybranch)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:23:40 2024 +0530
+
+    4 added in cherrybranch
+
+commit 5708ad84fff81504ab6b66bfcf8cb413db1d6d28
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:23:00 2024 +0530
+
+    3 added in cherrybranch
+
+commit c3c7d64f77824531f344be4822d8b0056328a5ca
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:22:44 2024 +0530
+
+    2 added in cherrybranch
+
+commit 4925af1262a48f13ec4c8d4868ccff58bf40111b
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:21:40 2024 +0530
+
+    1 added in cherrybranch
+
+commit 8e8ab66bd05ef419ce47270447c659be43ffe6c4 (origin/main, origin/HEAD, main)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 22:13:35 2024 +0530
+
+    Initial commit
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git branch
+  cherrybranch
+* main
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git log
+commit 8e8ab66bd05ef419ce47270447c659be43ffe6c4 (HEAD -> main, origin/main, origin/HEAD)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 22:13:35 2024 +0530
+
+    Initial commit
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git cherry-pick 5708ad84fff81504ab6b66bfcf8cb413db1d6d28
+[main bef3044] 3 added in cherrybranch
+ Date: Thu Mar 14 22:23:00 2024 +0530
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>git log
+commit bef3044db7d23d08f7422597febe7ad117b25c40 (HEAD -> main)
+Author: Monika <ammonika2004@gmail.com>
+Date:   Thu Mar 14 22:23:00 2024 +0530
+
+    3 added in cherrybranch
+
+commit 8e8ab66bd05ef419ce47270447c659be43ffe6c4 (origin/main, origin/HEAD)
+Author: ammonika <159523552+ammonika@users.noreply.github.com>
+Date:   Thu Mar 14 22:13:35 2024 +0530
+
+    Initial commit
+
+D:\Monu\3rd Sem\Git\gl\prg8\cherrypick>
